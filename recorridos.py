@@ -8,7 +8,7 @@ def preorden_bosque(b: Bosque) -> list:
     lst = []
     node = b.nodo
     while node is not None:
-        lst += [node] + preorden_bosque(node.primog)
+        lst += preorden_bosque(node.primog) + [node]
         node = node.sig_herm
     return lst
 
@@ -32,7 +32,7 @@ def niveles_bosque(b: Bosque) -> list:
     b3 = Bosque()
     while node is not None:
         lst += [node]
-        b3 = unir(b3, node.primog)
+        b3 = unir(node.primog, b3)
         node = node.sig_herm
     lst += niveles_bosque(b3)
     return lst
@@ -70,11 +70,11 @@ def unir(b1: Bosque, b2: Bosque) -> Bosque:
 
 
 def preorden(a: Arbol) -> list:
-    return [a.nodo] + preorden_bosque(a.nodo.primog)
+    return preorden_bosque(a.nodo.primog) + [a.nodo]
 
 
 def postorden(a: Arbol) -> list:
-    return postorden_bosque(a.nodo.primog) + [a.nodo]
+    return [a.nodo] + postorden_bosque(a.nodo.primog)
 
 
 def niveles(a: Arbol) -> list:
