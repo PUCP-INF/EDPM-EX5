@@ -127,7 +127,6 @@ def main():
     b_a.add_arbol(a_d)
     assert a_c.es_hoja_(), 'C no es un bosque vacio'
     assert len(b_a) == 3, '--> Error al agregar los arboles B,C,D al bosque'
-    print(num_hojas(a_a))
 
     b_e = Bosque()
     a_e = Arbol('E', b_e)
@@ -165,13 +164,37 @@ def main():
     assert a_h.es_hoja_(), 'C no es un bosque vacio'
     assert len(b_d) == 3, '--> Error al agregar los arboles J,K,L al bosque'
 
-    print('Recorrido preorden:', end='')
+    b_m = Bosque()
+    a_m = Arbol('M', b_m)
+
+    b_g.add_arbol(a_m)
+    assert len(b_g) == 1, '--> Error al agregar el arbol G al bosque'
+
+    b_p = Bosque()
+    a_p = Arbol('P', b_p)
+    b_q = Bosque()
+    a_q = Arbol('Q', b_q)
+
+    b_m.add_arbol(a_p)
+    b_m.add_arbol(a_q)
+    assert len(b_m) == 2, '--> Error al agregar los arboles P,Q al bosque'
+
+    b_n = Bosque()
+    a_n = Arbol('N', b_n)
+    b_o = Bosque()
+    a_o = Arbol('O', b_o)
+
+    b_i.add_arbol(a_n)
+    b_i.add_arbol(a_o)
+    assert len(b_i) == 2, '--> Error al agregar los arboles N,O al bosque'
+
+    print('Recorrido preorden: ', end='')
     get_valores(preorden(a_a))
-    print('Recorrido postorden:', end='')
+    print('Recorrido postorden: ', end='')
     get_valores(postorden(a_a))
-    print('Recorrido niveles:', end='')
+    print('Recorrido niveles: ', end='')
     get_valores(niveles(a_a))
-    print('Recorrido fronter:', end='')
+    print('Recorrido frontera: ', end='')
     get_valores(frontera(a_a))
 
 
