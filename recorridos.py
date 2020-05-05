@@ -32,7 +32,7 @@ def niveles_bosque(b: Bosque) -> list:
     b3 = Bosque()
     while node is not None:
         lst += [node]
-        b3 = unir(node.primog, b3)
+        b3 = unir(b3, node.primog)
         node = node.sig_herm
     lst += niveles_bosque(b3)
     return lst
@@ -78,7 +78,7 @@ def postorden(a: Arbol) -> list:
 
 
 def niveles(a: Arbol) -> list:
-    return [a.nodo] + niveles_bosque(a.nodo.primog)
+    return niveles_bosque(a.nodo.primog) + [a.nodo]
 
 
 def frontera(a: Arbol) -> list:
