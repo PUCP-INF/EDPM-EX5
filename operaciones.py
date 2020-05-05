@@ -1,6 +1,7 @@
 from typing import List
 
 from arbol import Arbol, _NodoArbol
+from bosque import Bosque
 from recorridos import preorden, postorden, niveles, frontera
 
 
@@ -26,9 +27,13 @@ def num_nodos(a: Arbol) -> int:
     return len(preorden(a))
 
 
+def altura(b: Bosque) -> int:
+    if b.nodo is None:
+        return 0
+    total = 0
+
+    return total
+
+
 def get_valores(lst: List[_NodoArbol]) -> None:
     print([node.valor for node in lst])
-
-
-def altura(a: Arbol) -> int:
-    pass
