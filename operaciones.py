@@ -33,12 +33,10 @@ def num_hojas_bosque(b: Bosque) -> int:
 
 
 def grado_bosque(b: Bosque) -> int:
-    max_grado = 0
+    max_grado = len(b)
     node = b.nodo
     while node is not None:
-        if node.sig_herm is not None:
-            if len(node.primog) > grado_bosque(node.sig_herm.primog):
-                max_grado = len(b)
+        max_grado = max(max_grado, grado_bosque(node.primog))
         node = node.sig_herm
     return max_grado
 
