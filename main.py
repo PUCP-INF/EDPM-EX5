@@ -1,7 +1,7 @@
 from bosque import Bosque
 from arbol import Arbol
 from recorridos import preorden, postorden, niveles, frontera
-from operaciones import num_hojas, grado_arbol, num_nodos, get_valores
+from operaciones import get_valores
 
 
 def ej_prof():
