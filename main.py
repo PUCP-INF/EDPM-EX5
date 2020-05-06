@@ -1,7 +1,7 @@
 from bosque import Bosque
 from arbol import Arbol
 from recorridos import preorden, postorden, niveles, frontera
-from operaciones import get_valores
+from operaciones import get_valores, grado, altura, num_nodos, num_hojas
 
 
 def ej_prof():
@@ -188,6 +188,10 @@ def main():
     b_i.add_arbol(a_o)
     assert len(b_i) == 2, '--> Error al agregar los arboles N,O al bosque'
 
+    print("Numero de nodos: %d" % num_nodos(a_a))
+    print("Numero de hojas :%d" % num_hojas(a_a))
+    print("Maximo grado: %d" % grado(a_a))
+    print("Altura del arbol: %d" % altura(a_a))
     print('Recorrido preorden: ', end='')
     get_valores(preorden(a_a))
     print('Recorrido postorden: ', end='')

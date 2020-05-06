@@ -56,11 +56,9 @@ def num_nodos_bosque(b: Bosque) -> int:
 def altura_bosque(b: Bosque) -> int:
     total = 0
     node = b.nodo
-    node_aux = b.nodo
     while node is not None:
-        while len(node.primog) == 0:
-            node = node.primog.nodo
-            total += 1
+        total = max(1 + altura_bosque(node.primog), total)
+        node = node.sig_herm
     return total
 
 
