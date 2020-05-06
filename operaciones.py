@@ -1,6 +1,4 @@
-from typing import List
-
-from arbol import Arbol, _NodoArbol
+from arbol import Arbol
 from bosque import Bosque
 
 
@@ -60,9 +58,3 @@ def altura_bosque(b: Bosque) -> int:
         total = max(1 + altura_bosque(node.primog), total)
         node = node.sig_herm
     return total
-
-
-def get_valores(lst: List[_NodoArbol]) -> None:
-    new_lst = [node.valor for node in lst]
-    new_lst.reverse()
-    print(new_lst)

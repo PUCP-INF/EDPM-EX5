@@ -1,7 +1,7 @@
 from bosque import Bosque
 from arbol import Arbol
 from recorridos import preorden, postorden, niveles, frontera
-from operaciones import get_valores, grado, altura, num_nodos, num_hojas
+from operaciones import grado, altura, num_nodos, num_hojas
 
 
 def ej_prof():
@@ -193,13 +193,13 @@ def main():
     print("Maximo grado: %d" % grado(a_a))
     print("Altura del arbol: %d" % altura(a_a))
     print('Recorrido preorden: ', end='')
-    get_valores(preorden(a_a))
+    print(preorden(a_a))
     print('Recorrido postorden: ', end='')
-    get_valores(postorden(a_a))
+    print(postorden(a_a))
     print('Recorrido niveles: ', end='')
-    get_valores(niveles(a_a))
+    print(niveles(a_a))
     print('Recorrido frontera: ', end='')
-    get_valores(frontera(a_a))
+    print(frontera(a_a))
 
 
 if __name__ == "__main__":
